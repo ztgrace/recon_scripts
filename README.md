@@ -2,7 +2,7 @@
 
 Here are some scripts I use to automate initial recon steps using recon-ng.
 
-* **arin.py** - This module grabs IPs from the hosts table and performs an ARIN query with them to identify their associated netback and company.
+* **arin.py** - This module grabs IPs from the hosts table and performs an ARIN query with them to identify their associated netblock and company.
 * **axfr.py** - This module will perform a zone transfer against all the domains in the domains table.
 * **recon-ng_enum.sh** - This is a wrapper script to kick off some basic reconnaissance using the recon-ng cli.
 
