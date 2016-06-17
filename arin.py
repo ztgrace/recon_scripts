@@ -20,8 +20,14 @@ class Module(BaseModule):
         return handle
 
     def add_columns(self,):
-        self.query("ALTER TABLE hosts ADD COLUMN netblock TEXT")
-        self.query("ALTER TABLE hosts ADD COLUMN company TEXT")
+	try:
+	        self.query("ALTER TABLE hosts ADD COLUMN netblock TEXT")
+	except Exception as e:
+		print("[*] Column most likely exists.  Error returned: " + str(e))
+	try:
+	        self.query("ALTER TABLE hosts ADD COLUMN company TEXT")
+	except Exception as e:
+		print("[*] Column most likely exists. Error returned: " + str(e))
 
     def module_run(self, ips):
         self.add_columns()
